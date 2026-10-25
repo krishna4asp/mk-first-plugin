@@ -14,5 +14,7 @@ export const register: Register = on => {
     const result = await next(e)
     $.ui.status(`${e.tool} done · ${n} call${n === 1 ? '' : 's'}`)
     return result
-  })
+  }).catch(($, e, next) =>
+    next.called ? next(e) : { deny: `${$.plugin.name}: hook failed for ${e.tool}` },
+  )
 }
