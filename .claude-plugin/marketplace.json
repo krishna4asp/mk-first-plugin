@@ -1,0 +1,5 @@
+{
+  "name": "mk-first-plugin",
+  "owner": { "name": "Krishna" },
+  "plugins": [{ "name": "mk-first-plugin", "source": "./" }]
+}
